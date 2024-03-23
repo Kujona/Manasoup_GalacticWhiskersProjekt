@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 0}
   Player: {fileID: 0}
+  collectSound: {fileID: 8300000, guid: 8ee7d66d410af614a8ffe996edfb9818, type: 3}

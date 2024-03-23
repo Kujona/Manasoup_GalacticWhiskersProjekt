@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayRandomSound : MonoBehaviour
 {
-    public GameObject position;
     public List<AudioClip> audioClips;
     public float minPause = 15f;
     public float maxPause = 20f;
@@ -35,6 +34,6 @@ public class PlayRandomSound : MonoBehaviour
     void Moan()
     {
         AudioClip randomMoan = audioClips[Random.Range(0, audioClips.Count)];
-        AudioSource.PlayClipAtPoint(randomMoan, position.transform.position);
+        AudioSource.PlayClipAtPoint(randomMoan, gameObject.transform.position);
     }
 }

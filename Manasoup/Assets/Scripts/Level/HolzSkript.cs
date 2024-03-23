@@ -8,6 +8,8 @@ public class HolzSkript : MonoBehaviour
     public new BoxCollider2D collider;
     public GameObject Player;
 
+    public AudioClip collectSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class HolzSkript : MonoBehaviour
         if (collision.tag == "Player")
         {
             Player.GetComponent<PlayerActions>().IncreaseHolz();
+            AudioSource.PlayClipAtPoint(collectSound, gameObject.transform.position);
             Destroy(gameObject);
             Debug.Log("collected wood");
         }
