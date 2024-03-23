@@ -6,21 +6,21 @@ public class PlayRandomSound : MonoBehaviour
 {
     public GameObject position;
     public List<AudioClip> audioClips;
-    public float minPause = 10f;
+    public float minPause = 15f;
     public float maxPause = 20f;
     
     private float shoutTime;
     private float currentTime;
     
-    // Start is called before the first frame update
+    
     void Start()
     {
         // Set random interval for when the zombie moans
         shoutTime = Random.Range(minPause, maxPause);
-        currentTime = shoutTime;
+        currentTime = Random.Range(0.5f, maxPause);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         currentTime -= Time.deltaTime;
@@ -30,6 +30,7 @@ public class PlayRandomSound : MonoBehaviour
             Moan();
         }
     }
+
 
     void Moan()
     {

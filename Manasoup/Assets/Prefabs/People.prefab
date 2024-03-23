@@ -205,7 +205,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 740779442feca8f4eaf705bd759e3269, type: 3}
   - {fileID: 8300000, guid: 1fbac46e3486d134a883ec9f65a0e717, type: 3}
   - {fileID: 8300000, guid: fa3887abea6deef4f98876957a79e6eb, type: 3}
-  minPause: 10
+  minPause: 15
   maxPause: 20
 --- !u!1 &8382969237993606623
 GameObject:
