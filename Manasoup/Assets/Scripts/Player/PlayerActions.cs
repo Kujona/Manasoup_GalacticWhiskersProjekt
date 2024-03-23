@@ -43,7 +43,7 @@ public class PlayerActions : MonoBehaviour
 
     private void OnDisable()
     {
-        input.Enable();
+        input.Disable();
         input.Player.PlaceHolz.canceled -= OnButtonEPress;
         input.Player.Rewind.canceled -= OnButtonQPress;
     }
