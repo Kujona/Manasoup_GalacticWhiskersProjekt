@@ -11,12 +11,14 @@ public class PlayerActions : MonoBehaviour
     public TileBase barricade;
     public Tilemap barricateTilemap;
     public PlayerMovement movement;
+    public int holz;
     private Vector3Int placePosition1;
     private Vector3Int placePosition2;
 
     // Start is called before the first frame update
     void Start()
     {
+        //holz = 0;
         movement = GetComponent<PlayerMovement>();
     }
 
@@ -24,9 +26,10 @@ public class PlayerActions : MonoBehaviour
     void Update()
     {
         DefinePlacePosition();
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e") && holz != 0)
         {
             PlaceBarricade();
+            holz--;
         }
     }
 
@@ -65,6 +68,11 @@ public class PlayerActions : MonoBehaviour
         barricateTilemap.SetTile(placePosition1, barricade);
         barricateTilemap.SetTile(placePosition2, barricade);
         Debug.Log("barricade placed");
+    }
+
+    public void IncreaseHolz()
+    {
+        holz++;
     }
 
 }
