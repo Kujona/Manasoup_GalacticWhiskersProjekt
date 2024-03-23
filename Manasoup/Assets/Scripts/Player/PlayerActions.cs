@@ -23,6 +23,8 @@ public class PlayerActions : MonoBehaviour
     private Vector3Int placePosition1;
     private Vector3Int placePosition2;
 
+    public RandomSoundPlayer randomSoundPlayer;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -111,6 +113,7 @@ public class PlayerActions : MonoBehaviour
     {
         barricateTilemap.SetTile(placePosition1, barricade);
         barricateTilemap.SetTile(placePosition2, barricade);
+        randomSoundPlayer.PlayRandomSound();
         Debug.Log("barricade placed");
     }
 

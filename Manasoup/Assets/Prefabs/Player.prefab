@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 6449582287921407041}
   - component: {fileID: 2325864922284046333}
   - component: {fileID: 4236301989381594194}
+  - component: {fileID: 491648327871918679}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -309,3 +310,22 @@ MonoBehaviour:
   controller: {fileID: 0}
   holz: 0
   vergangenheit: 0
+  randomSoundPlayer: {fileID: 491648327871918679}
+--- !u!114 &491648327871918679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132326473429213594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1eee5857fcdb349993fad54ca482d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 8094f54c8da0ff741ad6515f874011f2, type: 3}
+  - {fileID: 8300000, guid: 9cbe2b47b453da5478f9310c5a0de733, type: 3}
+  repeatRandomly: 0
+  minPause: 15
+  maxPause: 20

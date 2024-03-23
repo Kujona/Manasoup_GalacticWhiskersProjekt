@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayRandomSound : MonoBehaviour
+public class RandomSoundPlayer : MonoBehaviour
 {
-    public List<AudioClip> audioClips;
+    public List<AudioClip> sounds;
+
+    public bool repeatRandomly = true;
     public float minPause = 15f;
     public float maxPause = 20f;
     
@@ -14,6 +16,11 @@ public class PlayRandomSound : MonoBehaviour
     
     void Start()
     {
+        if (!repeatRandomly)
+        {
+            return;
+        }
+        
         // Set random interval for when the zombie moans
         shoutTime = Random.Range(minPause, maxPause);
         currentTime = Random.Range(0.5f, maxPause);
@@ -22,18 +29,23 @@ public class PlayRandomSound : MonoBehaviour
 
     void Update()
     {
+        if (!repeatRandomly)
+        {
+            return;
+        }
+        
         currentTime -= Time.deltaTime;
         if (currentTime <= 0)
         {
             currentTime = shoutTime;
-            Moan();
+            PlayRandomSound();
         }
     }
 
 
-    void Moan()
+    public void PlayRandomSound()
     {
-        AudioClip randomMoan = audioClips[Random.Range(0, audioClips.Count)];
-        AudioSource.PlayClipAtPoint(randomMoan, gameObject.transform.position);
+        AudioClip randomSound = sounds[Random.Range(0, sounds.Count)];
+        AudioSource.PlayClipAtPoint(randomSound, gameObject.transform.position);
     }
 }
