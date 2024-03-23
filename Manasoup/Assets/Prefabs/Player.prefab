@@ -104,8 +104,9 @@ GameObject:
   - component: {fileID: 5469242204068873753}
   - component: {fileID: 8609113789725232354}
   - component: {fileID: 996232945492173432}
-  - component: {fileID: 6332705511479248478}
   - component: {fileID: 6449582287921407041}
+  - component: {fileID: 6332705511479248478}
+  - component: {fileID: 4236301989381594194}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -170,7 +171,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -434694661, guid: 5ed31f993882d6045aa7514576d495f6, type: 3}
+  m_Sprite: {fileID: -1470214580, guid: de4a36c7343fda5429bbeb15e268368b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -253,19 +254,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.82719636, y: 0.53418005}
   m_EdgeRadius: 0
---- !u!114 &6332705511479248478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5132326473429213594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ff704ef3463c0f45a1e2593a8b39212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
 --- !u!95 &6449582287921407041
 Animator:
   serializedVersion: 5
@@ -287,3 +275,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6332705511479248478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132326473429213594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff704ef3463c0f45a1e2593a8b39212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  change: {x: 0, y: 0, z: 0}
+  newestChange: {x: 0, y: 0, z: 0}
+--- !u!114 &4236301989381594194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132326473429213594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7235345540d7fc8478a1ca8ce26c6f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barricade: {fileID: 11400000, guid: 49f2d59831e2be9418569a2371a32165, type: 2}
+  walls: {fileID: 0}
+  movement: {fileID: 0}
