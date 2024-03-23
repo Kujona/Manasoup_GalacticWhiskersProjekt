@@ -96,3 +96,5 @@ MonoBehaviour:
   HolzCount: {fileID: 0}
   Hints: {fileID: 0}
   Time: {fileID: 0}
+  bgm: {fileID: 0}
+  gegenwartMusic: {fileID: 8300000, guid: e1f7da3bfb2d2b342bb14e7f951ead5c, type: 3}

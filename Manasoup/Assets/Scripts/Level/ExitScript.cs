@@ -14,6 +14,9 @@ public class ExitScript : MonoBehaviour
     public GameObject Hints;
     public GameObject Time;
 
+    public AudioSource bgm;
+    public AudioClip gegenwartMusic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,8 @@ public class ExitScript : MonoBehaviour
         HolzCount = GameObject.FindWithTag("HolzCount");
         Hints = GameObject.FindWithTag("Hints");
         Time = GameObject.FindWithTag("Time");
+
+        bgm = GameObject.FindWithTag("BGM").GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,6 +44,11 @@ public class ExitScript : MonoBehaviour
                 Hints.GetComponent<TextMeshProUGUI>().text = "Survive!";
                 Time.GetComponent <TextMeshProUGUI>().text = "Heute (ZDay)";
                 Time.GetComponent<Animator>().SetTrigger("Trigger");
+                
+                bgm.Stop();
+                bgm.clip = gegenwartMusic;
+                bgm.Play();
+                
                 vergangenheit = false;
             } else
             {
