@@ -12,6 +12,7 @@ public class ExitScript : MonoBehaviour
     public GameObject Overlay;
     public GameObject HolzCount;
     public GameObject Hints;
+    public GameObject Time;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class ExitScript : MonoBehaviour
         Overlay.GetComponent<Animator>().SetBool("vergangenheit", true);
         HolzCount = GameObject.FindWithTag("HolzCount");
         Hints = GameObject.FindWithTag("Hints");
+        Time = GameObject.FindWithTag("Time");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,6 +37,8 @@ public class ExitScript : MonoBehaviour
                 Overlay.GetComponent<Animator>().SetBool("vergangenheit", false);
                 HolzCount.GetComponent<TextMeshProUGUI>().text = " ";
                 Hints.GetComponent<TextMeshProUGUI>().text = "Survive!";
+                Time.GetComponent <TextMeshProUGUI>().text = "ZDay";
+                Time.GetComponent<Animator>().SetTrigger("Trigger");
                 vergangenheit = false;
             } else
             {

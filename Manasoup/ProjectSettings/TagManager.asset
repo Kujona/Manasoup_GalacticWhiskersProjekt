@@ -9,6 +9,7 @@ TagManager:
   - CamOverlay
   - Exit
   - Hints
+  - Time
   layers:
   - Default
   - TransparentFX
