@@ -5,7 +5,7 @@ using UnityEngine;
 public class HolzSkript : MonoBehaviour
 {
 
-    public BoxCollider2D collider;
+    public new BoxCollider2D collider;
     public GameObject Player;
 
     // Start is called before the first frame update

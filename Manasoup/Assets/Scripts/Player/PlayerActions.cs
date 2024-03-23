@@ -5,13 +5,15 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
+
 public class PlayerActions : MonoBehaviour
 {
 
     public TileBase barricade;
     public Tilemap barricateTilemap;
     public PlayerMovement movement;
-    public int holz;
+    public UIController controller;
+    public int holz; 
     private Vector3Int placePosition1;
     private Vector3Int placePosition2;
 
@@ -20,6 +22,7 @@ public class PlayerActions : MonoBehaviour
     {
         //holz = 0;
         movement = GetComponent<PlayerMovement>();
+        controller = GameObject.FindWithTag("UIController").GetComponent<UIController>();
     }
 
     // Update is called once per frame
@@ -30,7 +33,9 @@ public class PlayerActions : MonoBehaviour
         {
             PlaceBarricade();
             holz--;
+            controller.UpdateHolz(holz);
         }
+
     }
 
     private void DefinePlacePosition()
@@ -73,6 +78,7 @@ public class PlayerActions : MonoBehaviour
     public void IncreaseHolz()
     {
         holz++;
+        controller.UpdateHolz(holz);
     }
 
 }
