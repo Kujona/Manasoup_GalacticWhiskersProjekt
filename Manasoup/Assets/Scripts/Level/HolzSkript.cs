@@ -17,10 +17,13 @@ public class HolzSkript : MonoBehaviour
         collider = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
-        
+        if(Player.GetComponent<PlayerActions>().vergangenheit == false)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,4 +36,5 @@ public class HolzSkript : MonoBehaviour
             Debug.Log("collected wood");
         }
     }
+
 }

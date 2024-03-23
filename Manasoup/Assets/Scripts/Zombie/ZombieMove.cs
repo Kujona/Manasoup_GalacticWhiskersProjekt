@@ -8,26 +8,33 @@ public class ZombieMove : MonoBehaviour
     public GameObject UIController;
     public float speed;
     private float distance;
+    public bool following;
 
  
     void Awake()
     {
+        following = false;
         Player = GameObject.FindWithTag("Player");
         UIController = GameObject.FindWithTag("UIController");
     }
 
     void FixedUpdate()
     {
-        distance = Vector3.Distance(transform.position, Player.transform.position);
-        Vector3 direction = Player.transform.position - transform.position;
-        transform.position = Vector3.MoveTowards(this.transform.position, Player.transform.position, speed * Time.deltaTime);
+        if (following == true)
+        {
+            distance = Vector3.Distance(transform.position, Player.transform.position);
+            Vector3 direction = Player.transform.position - transform.position;
+            transform.position = Vector3.MoveTowards(this.transform.position, Player.transform.position, speed * Time.deltaTime);
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Kill()
     {
-        if (collision.tag == "Player")
-        {
             UIController.GetComponent<UIController>().GameOver();
-        }
+    }
+
+    public void StartFollowing()
+    {
+        following = true;
     }
 }
