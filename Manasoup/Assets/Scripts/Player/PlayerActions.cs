@@ -11,7 +11,9 @@ public class PlayerActions : MonoBehaviour
 {
 
     public TileBase barricade;
+    public TileBase blueprint;
     public Tilemap barricateTilemap;
+    public Tilemap blueprintTilemap;
     public PlayerMovement movement;
     public UIController controller;
     public int holz;
@@ -31,6 +33,10 @@ public class PlayerActions : MonoBehaviour
     void Update()
     {
         DefinePlacePosition();
+        if (holz != 0)
+        {
+            UpdateBlueprint();
+        }
         if (Input.GetKeyDown("e") && holz != 0)
         {
             PlaceBarricade();
@@ -78,6 +84,13 @@ public class PlayerActions : MonoBehaviour
         barricateTilemap.SetTile(placePosition1, barricade);
         barricateTilemap.SetTile(placePosition2, barricade);
         Debug.Log("barricade placed");
+    }
+
+    private void UpdateBlueprint()
+    {
+        blueprintTilemap.ClearAllTiles();
+        blueprintTilemap.SetTile(placePosition1, blueprint);
+        blueprintTilemap.SetTile(placePosition2, blueprint);
     }
 
     public void IncreaseHolz()
