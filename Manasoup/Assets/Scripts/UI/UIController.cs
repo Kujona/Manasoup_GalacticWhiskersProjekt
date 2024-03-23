@@ -20,7 +20,7 @@ public class UIController : MonoBehaviour
     }
 
     public void UpdateHolz(int holz)
-    {
+    { 
         HolzCount.GetComponent<TextMeshProUGUI>().text = "Holz: " + holz.ToString();
     }
 
