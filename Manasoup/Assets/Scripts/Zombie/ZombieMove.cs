@@ -13,6 +13,7 @@ public class ZombieMove : MonoBehaviour
     void Awake()
     {
         Player = GameObject.FindWithTag("Player");
+        UIController = GameObject.FindWithTag("UIController");
     }
 
     void FixedUpdate()
@@ -20,14 +21,13 @@ public class ZombieMove : MonoBehaviour
         distance = Vector3.Distance(transform.position, Player.transform.position);
         Vector3 direction = Player.transform.position - transform.position;
         transform.position = Vector3.MoveTowards(this.transform.position, Player.transform.position, speed * Time.deltaTime);
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-
+            UIController.GetComponent<UIController>().GameOver();
         }
     }
 }

@@ -1090,7 +1090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818bfb03c2a9fb3479efc779f3fae79b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HolzCount: {fileID: 0}
+  HolzCount: {fileID: 3025991032780504491}
+  GameOverObject: {fileID: 994091736493539454}
 --- !u!1 &6227738563979835526
 GameObject:
   m_ObjectHideFlags: 0
