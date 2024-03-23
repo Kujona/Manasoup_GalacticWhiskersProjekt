@@ -15,7 +15,7 @@ public class TheVirus : MonoBehaviour
         Exit = GameObject.FindWithTag("Exit");
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Exit.GetComponent<ExitScript>().vergangenheit == false)
         {

@@ -8,6 +8,7 @@ TagManager:
   - UIController
   - CamOverlay
   - Exit
+  - Hints
   layers:
   - Default
   - TransparentFX

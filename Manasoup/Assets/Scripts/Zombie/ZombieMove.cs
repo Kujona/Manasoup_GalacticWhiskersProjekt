@@ -15,7 +15,7 @@ public class ZombieMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         distance = Vector3.Distance(transform.position, Player.transform.position);
         Vector3 direction = Player.transform.position - transform.position;

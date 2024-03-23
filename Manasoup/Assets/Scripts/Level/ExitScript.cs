@@ -11,6 +11,7 @@ public class ExitScript : MonoBehaviour
     public GameObject Player;
     public GameObject Overlay;
     public GameObject HolzCount;
+    public GameObject Hints;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class ExitScript : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         Overlay.GetComponent<Animator>().SetBool("vergangenheit", true);
         HolzCount = GameObject.FindWithTag("HolzCount");
+        Hints = GameObject.FindWithTag("Hints");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,6 +34,7 @@ public class ExitScript : MonoBehaviour
                 Player.GetComponent<PlayerActions>().TimeChange(false); //true = Vergangenheit, false = Gegenwart
                 Overlay.GetComponent<Animator>().SetBool("vergangenheit", false);
                 HolzCount.GetComponent<TextMeshProUGUI>().text = " ";
+                Hints.GetComponent<TextMeshProUGUI>().text = "Survive!";
                 vergangenheit = false;
             } else
             {
