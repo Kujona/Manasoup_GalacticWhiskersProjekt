@@ -6,6 +6,8 @@ TagManager:
   tags:
   - HolzCount
   - UIController
+  - CamOverlay
+  - Exit
   layers:
   - Default
   - TransparentFX
