@@ -37,7 +37,7 @@ public class ExitScript : MonoBehaviour
                 Overlay.GetComponent<Animator>().SetBool("vergangenheit", false);
                 HolzCount.GetComponent<TextMeshProUGUI>().text = " ";
                 Hints.GetComponent<TextMeshProUGUI>().text = "Survive!";
-                Time.GetComponent <TextMeshProUGUI>().text = "ZDay";
+                Time.GetComponent <TextMeshProUGUI>().text = "Heute (ZDay)";
                 Time.GetComponent<Animator>().SetTrigger("Trigger");
                 vergangenheit = false;
             } else
