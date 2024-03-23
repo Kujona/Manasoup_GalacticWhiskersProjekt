@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -13,7 +14,8 @@ public class PlayerActions : MonoBehaviour
     public Tilemap barricateTilemap;
     public PlayerMovement movement;
     public UIController controller;
-    public int holz; 
+    public int holz;
+    public bool vergangenheit;
     private Vector3Int placePosition1;
     private Vector3Int placePosition2;
 
@@ -35,7 +37,10 @@ public class PlayerActions : MonoBehaviour
             holz--;
             controller.UpdateHolz(holz);
         }
-
+        if (Input.GetKeyDown("q") && vergangenheit == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void DefinePlacePosition()
