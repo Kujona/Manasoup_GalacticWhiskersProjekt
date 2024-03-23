@@ -32,7 +32,7 @@ public class ExitScript : MonoBehaviour
             Debug.Log("reached exit");
             if (vergangenheit)
             {
-                Player.GetComponent<PlayerMovement>().Respawn(); //Spieler Respawned
+                Player.GetComponent<NewPlayerMovement>().Respawn(); //Spieler Respawned
                 Player.GetComponent<PlayerActions>().TimeChange(false); //true = Vergangenheit, false = Gegenwart
                 Overlay.GetComponent<Animator>().SetBool("vergangenheit", false);
                 HolzCount.GetComponent<TextMeshProUGUI>().text = " ";

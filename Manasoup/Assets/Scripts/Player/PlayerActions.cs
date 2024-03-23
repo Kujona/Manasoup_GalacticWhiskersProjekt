@@ -5,16 +5,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine.InputSystem;
 
 
 public class PlayerActions : MonoBehaviour
 {
 
+    private CustomInput input = null;
     public TileBase barricade;
     public TileBase blueprint;
     public Tilemap barricateTilemap;
     public Tilemap blueprintTilemap;
-    public PlayerMovement movement;
+    public NewPlayerMovement movement;
     public UIController controller;
     public int holz;
     public bool vergangenheit;
@@ -22,33 +24,56 @@ public class PlayerActions : MonoBehaviour
     private Vector3Int placePosition2;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //holz = 0;
-        movement = GetComponent<PlayerMovement>();
+        input = new CustomInput();
+        movement = GetComponent<NewPlayerMovement>();
         controller = GameObject.FindWithTag("UIController").GetComponent<UIController>();
     }
 
+    private void OnEnable()
+    {
+        input.Enable();
+        input.Player.PlaceHolz.canceled += OnButtonEPress;
+        input.Player.Rewind.canceled += OnButtonQPress;
+    }
+
+    private void OnDisable()
+    {
+        input.Enable();
+        input.Player.PlaceHolz.canceled -= OnButtonEPress;
+        input.Player.Rewind.canceled -= OnButtonQPress;
+    }
+
+    private void OnButtonEPress(InputAction.CallbackContext value)
+    {
+        if(vergangenheit == true && holz != 0)
+        {
+            PlaceBarricade();
+            holz--;
+            controller.UpdateHolz(holz);
+        }
+    }
+    private void OnButtonQPress(InputAction.CallbackContext value)
+    {
+        if (vergangenheit == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
         if (vergangenheit == true)
         {
-            DefinePlacePosition();
+            
             if (holz != 0)
             {
+                DefinePlacePosition();
                 UpdateBlueprint();
             }
-            if (Input.GetKeyDown("e") && holz != 0)
-            {
-                PlaceBarricade();
-                holz--;
-                controller.UpdateHolz(holz);
-            }
-            if (Input.GetKeyDown("q"))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+            
         }
     }
 
