@@ -53,4 +53,6 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody.transform.position = new Vector3(0, 0, -6); //Spieler Sawned wieder bei 0,0. Die Level müssen einfach so gebaut werden, dass der Spawnpunkt bei diesen Weltkoordinaten ist.
     }
 
+    
+
 }

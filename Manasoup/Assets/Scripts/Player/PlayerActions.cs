@@ -32,20 +32,23 @@ public class PlayerActions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DefinePlacePosition();
-        if (holz != 0)
+        if (vergangenheit == true)
         {
-            UpdateBlueprint();
-        }
-        if (Input.GetKeyDown("e") && holz != 0)
-        {
-            PlaceBarricade();
-            holz--;
-            controller.UpdateHolz(holz);
-        }
-        if (Input.GetKeyDown("q") && vergangenheit == true)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            DefinePlacePosition();
+            if (holz != 0)
+            {
+                UpdateBlueprint();
+            }
+            if (Input.GetKeyDown("e") && holz != 0)
+            {
+                PlaceBarricade();
+                holz--;
+                controller.UpdateHolz(holz);
+            }
+            if (Input.GetKeyDown("q"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 
@@ -97,6 +100,12 @@ public class PlayerActions : MonoBehaviour
     {
         holz++;
         controller.UpdateHolz(holz);
+    }
+
+    public void TimeChange(bool b)
+    {
+        vergangenheit = b;
+        blueprintTilemap.ClearAllTiles();
     }
 
 }
