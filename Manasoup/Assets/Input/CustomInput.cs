@@ -53,6 +53,15 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""f92bca84-8463-4c1e-b6cd-5eb671c6b7b5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -341,6 +350,39 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
                     ""action"": ""Rewind"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c0a5a3e-226a-49a3-9ad4-0d34f9283bff"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""03bc06bc-958e-4db1-b7d1-4c1e6ce01006"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d52da8fa-808d-4a83-ab49-2d8b6f82e0f6"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -352,6 +394,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_PlaceHolz = m_Player.FindAction("PlaceHolz", throwIfNotFound: true);
         m_Player_Rewind = m_Player.FindAction("Rewind", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -416,6 +459,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_PlaceHolz;
     private readonly InputAction m_Player_Rewind;
+    private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private @CustomInput m_Wrapper;
@@ -423,6 +467,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @PlaceHolz => m_Wrapper.m_Player_PlaceHolz;
         public InputAction @Rewind => m_Wrapper.m_Player_Rewind;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -441,6 +486,9 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             @Rewind.started += instance.OnRewind;
             @Rewind.performed += instance.OnRewind;
             @Rewind.canceled += instance.OnRewind;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -454,6 +502,9 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             @Rewind.started -= instance.OnRewind;
             @Rewind.performed -= instance.OnRewind;
             @Rewind.canceled -= instance.OnRewind;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -476,5 +527,6 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnPlaceHolz(InputAction.CallbackContext context);
         void OnRewind(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

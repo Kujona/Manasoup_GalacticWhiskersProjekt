@@ -69,6 +69,6 @@ public class NewPlayerMovement : MonoBehaviour
     }
     public void Respawn()
     {
-        rb.transform.position = new Vector3(0, 0, -6); //Spieler Sawned wieder bei 0,0. Die Level müssen einfach so gebaut werden, dass der Spawnpunkt bei diesen Weltkoordinaten ist.
+        rb.transform.position = new Vector3(0, 0, -6); //Spieler Sawned wieder bei 0,0. Die Level mï¿½ssen einfach so gebaut werden, dass der Spawnpunkt bei diesen Weltkoordinaten ist.
     }
 }
