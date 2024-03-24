@@ -12,7 +12,12 @@ public class PlayerActions : MonoBehaviour
 {
 
     private CustomInput input = null;
-    public TileBase barricade;
+    public TileBase barricadelinks;
+    public TileBase barricaderechts;
+    public TileBase barricadeoben;
+    public TileBase barricadeunten;
+    private TileBase barricade1;
+    private TileBase barricade2;
     public TileBase blueprint;
     public Tilemap barricateTilemap;
     public Tilemap blueprintTilemap;
@@ -34,6 +39,8 @@ public class PlayerActions : MonoBehaviour
         movement = GetComponent<NewPlayerMovement>();
         controller = GameObject.FindWithTag("UIController").GetComponent<UIController>();
         //CutsceneSetup = GameObject.FindWithTag("CutsceneSetup"); // old cutscene code
+        barricade1 = barricadelinks;
+        barricade2 = barricaderechts;
     }
 
     private void OnEnable()
@@ -92,31 +99,39 @@ public class PlayerActions : MonoBehaviour
             placePosition1.y = placePosition1.y - 2;
             placePosition2.y = placePosition1.y;
             placePosition2.x = placePosition1.x + 1;
+            barricade1 = barricadelinks;
+            barricade2 = barricaderechts;
         }
         if (movement.newestChange.x == -1)  //left
         {
             placePosition1.x = placePosition1.x - 2;
             placePosition2.x = placePosition1.x;
             placePosition2.y = placePosition1.y - 1;
+            barricade1 = barricadeoben;
+            barricade2 = barricadeunten;
         }
         if (movement.newestChange.x == 1)   //right
         {
             placePosition1.x = placePosition1.x + 2;
             placePosition2.x = placePosition1.x;
             placePosition2.y = placePosition1.y - 1;
+            barricade1 = barricadeoben;
+            barricade2 = barricadeunten;
         }
         if (movement.newestChange.y == 1)   //up
         {
             placePosition1.y = placePosition1.y + 2;
             placePosition2.y = placePosition1.y;
             placePosition2.x = placePosition1.x + 1;
+            barricade1 = barricadelinks;
+            barricade2 = barricaderechts;
         }
     }
 
     public void PlaceBarricade()
     {
-        barricateTilemap.SetTile(placePosition1, barricade);
-        barricateTilemap.SetTile(placePosition2, barricade);
+        barricateTilemap.SetTile(placePosition1, barricade1);
+        barricateTilemap.SetTile(placePosition2, barricade2);
         randomSoundPlayer.PlayRandomSound();
         Debug.Log("barricade placed");
     }
