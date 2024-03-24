@@ -7,7 +7,7 @@ public class MenuController : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene"); //just loadin tha sample scene 4 now
+        SceneManager.LoadScene("Cutscene1"); //just loadin tha sample scene 4 now
     }
     public void Options()
     {

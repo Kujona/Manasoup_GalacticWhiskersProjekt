@@ -15,6 +15,7 @@ public class ExitScript : MonoBehaviour
     public GameObject Day;
     public GameObject Bloodspills;
     private GameObject CutsceneSetup;
+    public string next;
 
     public AudioSource bgm;
     public AudioClip gegenwartMusic;
@@ -62,7 +63,7 @@ public class ExitScript : MonoBehaviour
                 bgm.Stop();
                 //Time.timeScale = 0;
                 //CutsceneSetup.GetComponent<CutsceneSetup>().EndLevelCutscene();
-                SceneManager.LoadScene("Menu"); //insert name of next Scene
+                SceneManager.LoadScene(next); //insert name of next Scene
             }
         }
     }
