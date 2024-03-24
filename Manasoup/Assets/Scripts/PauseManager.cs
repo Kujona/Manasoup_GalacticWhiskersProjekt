@@ -79,4 +79,10 @@ public class PauseManager : MonoBehaviour
         float volume = voiceSlider.value;
         audioMixer.SetFloat("voiceVolume", volume);
     }
+    
+    // Buttons
+    public void Continue()
+    {
+        ResumeGame();
+    }
 }
