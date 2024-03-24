@@ -12,7 +12,7 @@ public class ExitScript : MonoBehaviour
     public GameObject Overlay;
     public GameObject HolzCount;
     public GameObject Hints;
-    public GameObject Time;
+    public GameObject Day;
     public GameObject Bloodspills;
     private GameObject CutsceneSetup;
 
@@ -22,12 +22,13 @@ public class ExitScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        
         Overlay = GameObject.FindWithTag("CamOverlay");
         Player = GameObject.FindWithTag("Player");
         Overlay.GetComponent<Animator>().SetBool("vergangenheit", true);
         HolzCount = GameObject.FindWithTag("HolzCount");
         Hints = GameObject.FindWithTag("Hints");
-        Time = GameObject.FindWithTag("Time");
+        Day = GameObject.FindWithTag("Time");
         Bloodspills = GameObject.FindWithTag("Bloodspills");
         CutsceneSetup = GameObject.FindWithTag("CutsceneSetup");
         Bloodspills.SetActive(false);
@@ -47,8 +48,8 @@ public class ExitScript : MonoBehaviour
                 Overlay.GetComponent<Animator>().SetBool("vergangenheit", false);
                 HolzCount.GetComponent<TextMeshProUGUI>().text = " ";
                 Hints.GetComponent<TextMeshProUGUI>().text = "Survive!";
-                Time.GetComponent <TextMeshProUGUI>().text = "Heute (ZDay)";
-                Time.GetComponent<Animator>().SetTrigger("Trigger");
+                Day.GetComponent <TextMeshProUGUI>().text = "Heute (ZDay)";
+                Day.GetComponent<Animator>().SetTrigger("Trigger");
                 Bloodspills.SetActive(true);
 
                 bgm.Stop();
@@ -59,8 +60,9 @@ public class ExitScript : MonoBehaviour
             } else
             {
                 bgm.Stop();
-                CutsceneSetup.GetComponent<CutsceneSetup>().EndLevelCutscene();
-                //SceneManager.LoadScene("Menu"); //insert name of next Scene
+                //Time.timeScale = 0;
+                //CutsceneSetup.GetComponent<CutsceneSetup>().EndLevelCutscene();
+                SceneManager.LoadScene("Menu"); //insert name of next Scene
             }
         }
     }
