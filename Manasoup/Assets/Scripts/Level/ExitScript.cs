@@ -13,12 +13,14 @@ public class ExitScript : MonoBehaviour
     public GameObject HolzCount;
     public GameObject Hints;
     public GameObject Time;
+    public GameObject Bloodspills;
+    private GameObject CutsceneSetup;
 
     public AudioSource bgm;
     public AudioClip gegenwartMusic;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Overlay = GameObject.FindWithTag("CamOverlay");
         Player = GameObject.FindWithTag("Player");
@@ -26,7 +28,10 @@ public class ExitScript : MonoBehaviour
         HolzCount = GameObject.FindWithTag("HolzCount");
         Hints = GameObject.FindWithTag("Hints");
         Time = GameObject.FindWithTag("Time");
-
+        Bloodspills = GameObject.FindWithTag("Bloodspills");
+        CutsceneSetup = GameObject.FindWithTag("CutsceneSetup");
+        Bloodspills.SetActive(false);
+        
         bgm = GameObject.FindWithTag("BGM").GetComponent<AudioSource>();
     }
 
@@ -44,7 +49,8 @@ public class ExitScript : MonoBehaviour
                 Hints.GetComponent<TextMeshProUGUI>().text = "Survive!";
                 Time.GetComponent <TextMeshProUGUI>().text = "Heute (ZDay)";
                 Time.GetComponent<Animator>().SetTrigger("Trigger");
-                
+                Bloodspills.SetActive(true);
+
                 bgm.Stop();
                 bgm.clip = gegenwartMusic;
                 bgm.Play();
@@ -52,7 +58,9 @@ public class ExitScript : MonoBehaviour
                 vergangenheit = false;
             } else
             {
-                SceneManager.LoadScene("Menu"); //insert name of next Scene
+                bgm.Stop();
+                CutsceneSetup.GetComponent<CutsceneSetup>().EndLevelCutscene();
+                //SceneManager.LoadScene("Menu"); //insert name of next Scene
             }
         }
     }

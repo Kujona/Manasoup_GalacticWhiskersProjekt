@@ -12,6 +12,9 @@ TagManager:
   - Time
   - GameOver
   - BGM
+  - Bloodspills
+  - StorySequenz
+  - CutsceneSetup
   layers:
   - Default
   - TransparentFX
