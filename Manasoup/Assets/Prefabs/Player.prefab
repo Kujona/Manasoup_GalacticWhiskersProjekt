@@ -304,6 +304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barricadelinks: {fileID: 11400000, guid: a9c6e6b82194ac340878973614ca8b28, type: 2}
   barricaderechts: {fileID: 11400000, guid: 9e947969257c5ca4d962e64225b3d952, type: 2}
+  barricadeoben: {fileID: 11400000, guid: 477ffeed86ee3664f920dc04ac800da5, type: 2}
+  barricadeunten: {fileID: 11400000, guid: e62d4d9fdf8cd70438d7bb2408edc368, type: 2}
   blueprint: {fileID: 11400000, guid: 86fab0a47a0100345bd6e23bf4f606eb, type: 2}
   barricateTilemap: {fileID: 0}
   blueprintTilemap: {fileID: 0}
