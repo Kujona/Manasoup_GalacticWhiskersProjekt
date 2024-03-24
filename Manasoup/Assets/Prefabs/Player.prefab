@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7235345540d7fc8478a1ca8ce26c6f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barricade: {fileID: 11400000, guid: 49f2d59831e2be9418569a2371a32165, type: 2}
-  blueprint: {fileID: 11400000, guid: 33d30702e5604b942afcb74eca0de9be, type: 2}
+  barricade: {fileID: 11400000, guid: 9e947969257c5ca4d962e64225b3d952, type: 2}
+  blueprint: {fileID: 11400000, guid: 86fab0a47a0100345bd6e23bf4f606eb, type: 2}
   barricateTilemap: {fileID: 0}
   blueprintTilemap: {fileID: 0}
   movement: {fileID: 0}
