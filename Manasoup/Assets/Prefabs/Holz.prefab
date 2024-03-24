@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8956668959383925697}
   - component: {fileID: 7735640116425337886}
   - component: {fileID: 9101617734680216488}
+  - component: {fileID: 2665533933775254730}
   m_Layer: 0
   m_Name: Holz
   m_TagString: Untagged
@@ -145,4 +146,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 0}
   Player: {fileID: 0}
-  collectSound: {fileID: 8300000, guid: 8ee7d66d410af614a8ffe996edfb9818, type: 3}
+  soundPlayer: {fileID: 2665533933775254730}
+--- !u!114 &2665533933775254730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907641943528312926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1eee5857fcdb349993fad54ca482d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixerGroup: {fileID: -1623864080512174823, guid: a8f89eaa16cac754facf01100d863e4b, type: 2}
+  sounds:
+  - {fileID: 8300000, guid: 8ee7d66d410af614a8ffe996edfb9818, type: 3}
+  randomPitch: 1
+  minPitch: 0.5
+  maxPitch: 1.5
+  repeatRandomly: 0
+  minPause: 15
+  maxPause: 20

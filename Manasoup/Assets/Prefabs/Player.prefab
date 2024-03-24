@@ -323,9 +323,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1eee5857fcdb349993fad54ca482d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixerGroup: {fileID: -1623864080512174823, guid: a8f89eaa16cac754facf01100d863e4b, type: 2}
   sounds:
   - {fileID: 8300000, guid: 8094f54c8da0ff741ad6515f874011f2, type: 3}
   - {fileID: 8300000, guid: 9cbe2b47b453da5478f9310c5a0de733, type: 3}
+  randomPitch: 0
+  minPitch: 0.5
+  maxPitch: 1.5
   repeatRandomly: 0
   minPause: 15
   maxPause: 20

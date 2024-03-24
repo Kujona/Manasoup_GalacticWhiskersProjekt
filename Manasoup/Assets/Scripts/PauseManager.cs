@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
+    public AudioMixer audioMixer;
+    public Slider musicSlider;
+    public Slider sfxSlider;
+    public Slider voiceSlider;
+    
     public bool isPaused;
     public GameObject pauseMenu;
     
@@ -52,5 +59,24 @@ public class PauseManager : MonoBehaviour
         pauseMenu.SetActive(false);
         isPaused = false;
         Time.timeScale = 1f;
+    }
+    
+    // Slider controls
+    public void SetMusicVolume()
+    {
+        float volume = musicSlider.value;
+        audioMixer.SetFloat("musicVolume", volume);
+    }
+    
+    public void SetSFXVolume()
+    {
+        float volume = sfxSlider.value;
+        audioMixer.SetFloat("sfxVolume", volume);
+    }
+    
+    public void SetVoiceVolume()
+    {
+        float volume = voiceSlider.value;
+        audioMixer.SetFloat("voiceVolume", volume);
     }
 }

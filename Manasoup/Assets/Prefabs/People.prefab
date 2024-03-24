@@ -295,10 +295,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1eee5857fcdb349993fad54ca482d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixerGroup: {fileID: -1623864080512174823, guid: a8f89eaa16cac754facf01100d863e4b, type: 2}
   sounds:
   - {fileID: 8300000, guid: 740779442feca8f4eaf705bd759e3269, type: 3}
   - {fileID: 8300000, guid: 1fbac46e3486d134a883ec9f65a0e717, type: 3}
   - {fileID: 8300000, guid: fa3887abea6deef4f98876957a79e6eb, type: 3}
+  randomPitch: 1
+  minPitch: 0.5
+  maxPitch: 1.5
   repeatRandomly: 1
   minPause: 15
   maxPause: 20
