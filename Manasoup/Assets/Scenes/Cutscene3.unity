@@ -305,10 +305,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1055,8 +1055,8 @@ Tilemap:
   - first: {x: -2, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileIndex: 8
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1213,14 +1213,14 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: f67e881552ebc9e4c98b7a40581bcc90, type: 2}
+    m_Data: {fileID: 11400000, guid: b1ffc40361117334ea50af4d8cbc6a7f, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 34e12c6a41be30c4c873e9349f7b98da, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b4fcb98c150cd4a448dbbf199694c1cd, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 67b06b1e7f038444782923eaf2a03d2b, type: 2}
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: e631817f6dfd98445bc6d1b219063d28, type: 2}
   - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: 80cc437cea6b743439b089022d5f94d4, type: 2}
@@ -1236,12 +1236,12 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
-    m_Data: {fileID: -898103970, guid: 8439a4ac94be71549adb7fdd26b5ca62, type: 3}
-  - m_RefCount: 6
+    m_Data: {fileID: -900945892, guid: 8439a4ac94be71549adb7fdd26b5ca62, type: 3}
+  - m_RefCount: 7
     m_Data: {fileID: 163305778, guid: 8439a4ac94be71549adb7fdd26b5ca62, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -2040623403, guid: 8439a4ac94be71549adb7fdd26b5ca62, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data: {fileID: -1691283518, guid: 8439a4ac94be71549adb7fdd26b5ca62, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -89375508, guid: 8439a4ac94be71549adb7fdd26b5ca62, type: 3}
@@ -1946,8 +1946,8 @@ Transform:
   m_GameObject: {fileID: 1714553686}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -956.1, y: -536.53, z: 0}
-  m_LocalScale: {x: 2.1137, y: 2.1137, z: 2.1137}
+  m_LocalPosition: {x: -954.06, y: -533.8, z: 1.0213}
+  m_LocalScale: {x: 3.1350396, y: 3.1350396, z: 3.1350396}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1648238657}
