@@ -22,15 +22,17 @@ public class AudioTriggerScript : MonoBehaviour
             return;
         }
 
-        onlyTriggerOnce = true;
+        
         
         if (collision.tag == "Player" && Ist_das_in_der_Vergangenheit == true && Player.GetComponent<PlayerActions>().vergangenheit == true)
         { 
             GetComponent<AudioSource>().Play();
+            onlyTriggerOnce = true;
         }
         if (collision.tag == "Player" && Ist_das_in_der_Vergangenheit == false && Player.GetComponent<PlayerActions>().vergangenheit == false)
         {
             GetComponent<AudioSource>().Play();
+            onlyTriggerOnce = true;
         }
     }
 }
