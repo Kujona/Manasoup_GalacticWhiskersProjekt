@@ -6,10 +6,11 @@ public class StorySequenzSound : MonoBehaviour
 {
     public AudioSource aud;
     public AudioClip[] clips;
+    public GameObject CutsceneSetup;
 
     void Awake()
     {
-        
+        CutsceneSetup = GameObject.FindWithTag("CutsceneSetup");
     }
 
     public void PlaySound(int i)
@@ -17,4 +18,10 @@ public class StorySequenzSound : MonoBehaviour
         aud.clip = clips[i];
         aud.Play();
     }
+
+    public void Ende()
+    {
+        CutsceneSetup.GetComponent<CutsceneSetup>().CutsceneBeenden();
+    }
+
 }

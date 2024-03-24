@@ -1707,7 +1707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1834712827699406703
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1779,6 +1779,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e26b73352bbefd240bc578370f4bc1ec, type: 3}
   - {fileID: 8300000, guid: a7c7932015b96054786065165d9d0b96, type: 3}
   - {fileID: 8300000, guid: 95e223315766ebd49ae359ffdc9ed8a1, type: 3}
+  CutsceneSetup: {fileID: 0}
 --- !u!1 &8482610923922038578
 GameObject:
   m_ObjectHideFlags: 0

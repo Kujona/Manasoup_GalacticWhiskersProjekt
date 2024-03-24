@@ -22,6 +22,7 @@ public class PlayerActions : MonoBehaviour
     public bool vergangenheit;
     private Vector3Int placePosition1;
     private Vector3Int placePosition2;
+    private GameObject CutsceneSetup;
 
     public RandomSoundPlayer randomSoundPlayer;
 
@@ -32,6 +33,7 @@ public class PlayerActions : MonoBehaviour
         input = new CustomInput();
         movement = GetComponent<NewPlayerMovement>();
         controller = GameObject.FindWithTag("UIController").GetComponent<UIController>();
+        CutsceneSetup = GameObject.FindWithTag("CutsceneSetup");
     }
 
     private void OnEnable()
@@ -50,12 +52,14 @@ public class PlayerActions : MonoBehaviour
 
     private void OnButtonEPress(InputAction.CallbackContext value)
     {
-        if(vergangenheit == true && holz != 0)
+        if (vergangenheit == true && holz != 0)
         {
             PlaceBarricade();
             holz--;
             controller.UpdateHolz(holz);
+            CutsceneSetup.GetComponent<CutsceneSetup>().CutsceneBeenden();
         }
+        CutsceneSetup.GetComponent<CutsceneSetup>().CutsceneBeenden();
     }
     private void OnButtonQPress(InputAction.CallbackContext value)
     {
