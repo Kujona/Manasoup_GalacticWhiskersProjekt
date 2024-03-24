@@ -27,7 +27,7 @@ public class PlayerActions : MonoBehaviour
     public bool vergangenheit;
     private Vector3Int placePosition1;
     private Vector3Int placePosition2;
-    //private GameObject CutsceneSetup; //old cutscene code
+    
 
     public RandomSoundPlayer randomSoundPlayer;
 
@@ -38,7 +38,7 @@ public class PlayerActions : MonoBehaviour
         input = new CustomInput();
         movement = GetComponent<NewPlayerMovement>();
         controller = GameObject.FindWithTag("UIController").GetComponent<UIController>();
-        //CutsceneSetup = GameObject.FindWithTag("CutsceneSetup"); // old cutscene code
+        
         barricade1 = barricadelinks;
         barricade2 = barricaderechts;
     }
@@ -64,9 +64,9 @@ public class PlayerActions : MonoBehaviour
             PlaceBarricade();
             holz--;
             controller.UpdateHolz(holz);
-            //CutsceneSetup.GetComponent<CutsceneSetup>().CutsceneBeenden(); //Old cutscene code
+           
         }
-        //CutsceneSetup.GetComponent<CutsceneSetup>().CutsceneBeenden(); //Old cutscene code
+        
     }
     private void OnButtonQPress(InputAction.CallbackContext value)
     {
